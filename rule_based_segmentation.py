@@ -101,7 +101,7 @@ agg_df2["SEGMENT"] = pd.qcut(agg_df2["PRICE"], 4, labels=["D", "C", "B", "A"])
 agg_df2.head()
 
 def check_segment(user):
-    segment = agg_df2[(agg_df2["customers_level_based"] == "user")].reset_index(drop=True)
+    segment = agg_df2[(agg_df2["customers_level_based"] == user)].reset_index(drop=True)
     print(segment["SEGMENT"][0])
 
 
@@ -111,5 +111,7 @@ def check_segment(user):
 # LABELS: 0_18, 19_23, 24_30, 31_40, 41_70
 
 
-check_segment(BRA_ANDROID_FEMALE_0_18)
+check_segment("BRA_ANDROID_FEMALE_0_18")
 check_segment("TUR_IOS_MALE_24_30")
+
+
